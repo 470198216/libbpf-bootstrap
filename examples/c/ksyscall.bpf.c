@@ -5,7 +5,7 @@
 
 #define TASK_COMM_LEN 16
 
-SEC("ksyscall/tgkill")
+SEC("ksyscall/openat")
 int BPF_KSYSCALL(tgkill_entry, pid_t tgid, pid_t tid, int sig)
 {
 	char comm[TASK_COMM_LEN];
